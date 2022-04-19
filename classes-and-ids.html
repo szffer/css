@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Classes and IDs</title>
+
+    <style>
+      body {
+        background-color: #a3a3b4;
+        color: #17230b;
+      }
+      h1 {
+        text-align: center;
+        font-size: 40px;
+      }
+      p {
+        color: blue;
+        font-size: 24px;
+      }
+      #styled-by-id {
+        font-family: Georgia, Cambria, serif;
+        font-weight: bold;
+      }
+      ul {
+        list-style: none;
+      }
+      li {
+        padding: 5px;
+        margin: 4px;
+        font-size: 20px;
+      }
+      .nav-link {
+        margin: 4px;
+
+        border: 2px, solid black;
+
+        padding: 5px;
+
+        background-color: #003100;
+        color: #eeffee;
+      }
+      .nav-link li {
+        display: inline-block;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <a class="nav-link" href="index.html"> <li>Inline CSS</li> </a>
+          <a class="nav-link" href="internal-css.html">
+            <li>Internal CSS</li>
+          </a>
+          <a class="nav-link" href="external-css.html">
+            <li>External CSS</li>
+          </a>
+          <a class="nav-link" href="testing-cascading.html">
+            <li>Testing Cascading</li>
+          </a>
+          <a class="nav-link" href="classes-and-ids.html">
+            <li>Classes and IDs</li>
+          </a>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1>Inline CSS</h1>
+      <p>This page shows the effects of adding internal CSS to HTML tags</p>
+      <p id="styled-by-id">
+        This paragraph will show the effect of giving an element and ID and
+        styling that ID
+      </p>
+    </main>
+  </body>
+</html>
