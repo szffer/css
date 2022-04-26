@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Classes and IDs</title>
+    <title>Typography Principles</title>
 
     <style>
       body {
@@ -44,10 +44,21 @@
       .nav-link li {
         display: inline-block;
       }
+      .typographic-principles {
+        font-family: Arial, Helvetica, sans-serif;
+        color: aquamarine;
+        background-color: #0000ff3f;
+        font-size: medium;
+        font-weight: bold;
+        text-decoration: underline;
+        font-style: italic;
+        text-transform: none;
+        width: fit-content;
+      }
     </style>
   </head>
 
-  <body>
+  <body style="line-height: 140%; word-spacing: normal; letter-spacing: normal">
     <header>
       <nav>
         <ul>
@@ -63,19 +74,28 @@
           </a>
           <a class="nav-link" href="classes-and-ids.html">
             <li>Classes and IDs</li>
+            <a class="nav-link" href="typography.html">
+              <li>Typography Principles</li>
+            </a>
           </a>
-          <a class="nav-link" href="typography.html">
-          <li>Typography Principles</li>
         </ul>
       </nav>
     </header>
     <main>
-      <h1>Inline CSS</h1>
-      <p>This page shows the effects of adding internal CSS to HTML tags</p>
-      <p id="styled-by-id">
-        This paragraph will show the effect of giving an element and ID and
-        styling that ID
-      </p>
+      <h1>Typography Principles</h1>
+      <div style="background-color: ghostwhite; height: 140px; width: auto">
+        <p>This page shows the effects of adding internal CSS to HTML tags</p>
+        <p id="styled-by-id">
+          This paragraph will show the effect of giving an element and ID and
+          <span style="background-color: rgb(0, 255, 30); font-style: italic">
+            styling
+          </span>
+          that ID
+        </p>
+        <p class="typographic-principles">
+          This paragraph shows us Typographic Principles.
+        </p>
+      </div>
     </main>
   </body>
 </html>
