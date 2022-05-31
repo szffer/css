@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Positioning</title>
+    <style>
+      /* Styles all elements to have a font size of 20 pixels by default. */
+      * {
+        box-sizing: border-box;
+        font-size: 20px;
+        line-height: 140%;
+        scroll-behavior: smooth;
+      }
+      /*      Styles all elements in the body to have a font color of whitesmoke. It also       sets the background to use an image of circles overlapping each other.    */
+      body {
+        color: whitesmoke;
+        /* Let us define an image using a URL to display an image as the background */
+        background-color: #222222;
+        margin: 0;
+      }
+      nav {
+        width: 100%;
+        /*         Defines a linear gradient background for the nav bar.        The linear gradient goes from right to left where the first        color #a8c0ff is on the right and the second color #3f2b96        is on the left.      */
+        background: -o-linear-gradient(to left, #a8c0ff, #3f2b96);
+        background: -moz-linear-gradient(to left, #a8c0ff, #3f2b96);
+        background: -webkit-linear-gradient(to left, #a8c0ff, #3f2b96);
+        background: linear-gradient(to left, #a8c0ff, #3f2b96);
+        /*         Changes the background size of the gradient to be 100%        of the width of the nav and the auto height for the nav.      */
+        background-size: 100% auto;
+        padding: 1% 2%;
+
+        position: sticky;
+
+        top: 0;
+        left: 0;
+        z-index: 1000000000000000000000000;
+      }
+      ul {
+        /* This gets rid of the bullet points beside each list item. */
+        list-style: none;
+      }
+      nav a {
+        /*         Needed to add this to allow the scaling transition to work.       */
+        display: inline-block;
+        /* Adds 4 pixels of space around the outside of each anchor in the nav */
+        margin: 4px;
+        /* Adds styling to the border of the element */
+        border: 2px solid black;
+        /* Adds 5 pixels of space around the inside of each anchor in the nav */
+        padding: 5px;
+        /*         Sets the background colour of the nav to #00549E and the font color         to be aliceblue.      */
+        background-color: #00549e;
+        color: aliceblue;
+        /*         Defines a shadow for our text that has three separate shadows.        The first is going to be offset 0.2px in the right direction,        0.2 px offset in the down direction, have 0px of blur, and a black color to the shadow.        The second is going to be offset 0.5px in the right direction,        0.5 px offset in the down direction, have 0px of blur, and a black color to the shadow.        The third is going to be offset 0.8px in the right direction,        0.8 px offset in the down direction, have 0px of blur, and a black color to the shadow.      */
+        text-shadow: 0.2px 0.2px 0.6px black, 0.5px 0.5px 0.3px black,
+          0.8px 0.8px 0px black;
+        /* Sets the text to have a bolder font weight. */
+        font-weight: bolder;
+        /*         The transition property allows for a smooth        change between the initial style of the nav        link to the hover/focus styling of increasing        the scale of the link using the transform property.        The transition lasts 0.5 seconds and eases in        and eases out of the transition.      */
+        -o-transition: transform 0.5s ease-in-out;
+        -moz-transition: transform 0.5s ease-in-out;
+        -webkit-transition: transform 0.5s ease-in-out;
+        transition: transform 0.5s ease-in-out;
+      }
+      /*       Swaps out the colour scheme of anchors in the nav when they are hovered over       or focused on.    */
+      nav a:hover,
+      nav a:focus {
+        background-color: #f0f8ff;
+        color: #00549e;
+        /*         Used to increase the size of the nav links to 110%.      */
+        -ms-transform: scale(1.1);
+        -o-transform: scale(1.1);
+        -moz-transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+      }
+      /* Changes the colour of the links that have been visited already. */
+      nav a:visited {
+        color: violet;
+      }
+      /* Uses descendant selectors to style all list items that are in the nav-link class elements */
+      nav a li {
+        /*         Changes all list items in the nav so that they will display beside one another,        but still be affected by Box model properties.      */
+        display: inline-block;
+        /* Adds spacing around the outside of an element. */
+        margin: 4px;
+        /* Adds spacing on the inside of an element. */
+        padding: 5px;
+        font-size: 20px;
+      }
+      main {
+        margin: 5% 10%;
+      }
+      /* Styles all main headings to use font size of 48 pixels and center aligns the text. */
+      h1 {
+        position: relative;
+        left: 50%;
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+        display: inline-block;
+        padding: 10px 30px;
+        background-color: lightcyan;
+        font-size: 48px;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        color: #00549e;
+        text-shadow: 0px 1px 1px black, 0px 1.5px 1px black, 0px 2px 1px black;
+      }
+      /* Changes the background color of the section to be #00549E. */
+      section {
+        display: inline-block;
+        background-color: #00549e;
+        padding: 10px 35px;
+        margin-bottom: 1%;
+      }
+      /* Changes the paragraphs in the section to have a bold font weight. */
+      section p {
+        font-weight: bold;
+      }
+      #back-to-top {
+        position: fixed;
+        right: 5px;
+        bottom: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /*         By defining the width and height equally and using a        border-radius that is half of the width and height, we        create a perfectly circular back-to-top button.      */
+        width: 50px;
+        height: 50px;
+        border-radius: 25px;
+        /*         Defines a radial gradient for this circular back to top        button. where the first colour #3f2b96 is in the center         of the circular area and goes to #a8c0ff on the outer        edges.      */
+        background: -o-radial-gradient(#3f2b96, #a8c0ff);
+        background: -moz-radial-gradient(#3f2b96, #a8c0ff);
+        background: -webkit-radial-gradient(#3f2b96, #a8c0ff);
+        background: radial-gradient(#3f2b96, #a8c0ff);
+        color: whitesmoke;
+        text-shadow: 0px 1px 1px black, 0px 1.5px 1px black;
+        text-decoration: none;
+        text-align: center;
+      }
+      #float img {
+        float: left;
+      }
+      #relative {
+        position: relative;
+        top: 200px;
+        right: 50px;
+      }
+      #positioned {
+        position: relative;
+
+        z-index: 1;
+      }
+      #absolute {
+        position: absolute;
+
+        right: 0;
+        bottom: 0;
+      }
+      #sticky {
+        position: sticky;
+
+        top: 200px;
+
+        z-index: 3;
+
+        background-color: #121212;
+
+        padding: 20px;
+
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <a href="index.html" class="nav-link"><li>Inline CSS Page</li></a>
+        <a href="internal-css.html" class="nav-link"
+          ><li>Internal CSS Page</li></a
+        >
+        <a href="external-css.html" class="nav-link"
+          ><li>External CSS Page</li></a
+        >
+        <a href="testing-cascading.html" class="nav-link"
+          ><li>Testing Cascading Page</li></a
+        >
+        <a href="classes-and-ids.html" class="nav-link"
+          ><li>Classes and IDs Page</li></a
+        >
+        <a href="div-and-span.html" class="nav-link"
+          ><li>Div and Span Page</li></a
+        >
+        <a href="typography.html" class="nav-link"><li>Typography Page</li></a>
+        <a href="backgrounds-and-text.html" class="nav-link"
+          ><li>Backgrounds and Text Page</li></a
+        >
+        <a href="gradients.html" class="nav-link"><li>Gradients Page</li></a>
+        <a href="transforms-transitions-animations.html" class="nav-link"
+          ><li>Transforms, Transitions, and Animations Page</li></a
+        >
+        <a href="positioning.html" class="nav-link"
+          ><li>Positioning Page</li></a
+        >
+      </ul>
+    </nav>
+    <main>
+      <h1>Positioning</h1>
+      <section id="float">
+        <img
+          src="https://images.genius.com/9b4641dc112c9ad658f61642112bd6a2.500x500x1.jpg"
+          alt="An image with the text Parental Approval School Appropriate displayed."
+          width="200px"
+          height="200px"
+        />
+        <p>
+          This is an image to represent just how school-appropriate this web
+          page is. We made this web page to demonstrate the CSS properties of
+          float, clear, position, display, and visibility.
+        </p>
+      </section>
+      <section id="relative">
+        <img
+          src="https://images.genius.com/9b4641dc112c9ad658f61642112bd6a2.500x500x1.jpg"
+          alt="An image with the text Parental Approval School Appropriate displayed."
+          width="200px"
+          height="200px"
+        />
+        <p>
+          This is an image to represent just how school-appropriate this web
+          page is. We made this web page to demonstrate the CSS properties of
+          float, clear, position, display, and visibility.
+        </p>
+      </section>
+      <section id="positioned">
+        <img
+          src="https://images.genius.com/9b4641dc112c9ad658f61642112bd6a2.500x500x1.jpg"
+          alt="An image with the text Parental Approval School Appropriate displayed."
+          width="200px"
+          height="200px"
+          id="absolute"
+        />
+        <p>
+          This is an image to represent just how school-appropriate this web
+          page is. We made this web page to demonstrate the CSS properties of
+          float, clear, position, display, and visibility.
+        </p>
+      </section>
+      <p id="sticky">
+        This text will stick to the top when we scroll past it because it uses
+        the sticky value for the position property.
+      </p>
+      <section>
+        <img
+          src="https://images.genius.com/9b4641dc112c9ad658f61642112bd6a2.500x500x1.jpg"
+          alt="An image with the text Parental Approval School Appropriate displayed."
+          width="200px"
+          height="200px"
+        />
+        <p>
+          This is an image to represent just how school-appropriate this web
+          page is. We made this web page to demonstrate the CSS properties of
+          float, clear, position, display, and visibility.
+        </p>
+      </section>
+      <section>
+        <img
+          src="https://images.genius.com/9b4641dc112c9ad658f61642112bd6a2.500x500x1.jpg"
+          alt="An image with the text Parental Approval School Appropriate displayed."
+          width="200px"
+          height="200px"
+        />
+        <p>
+          This is an image to represent just how school-appropriate this web
+          page is. We made this web page to demonstrate the CSS properties of
+          float, clear, position, display, and visibility.
+        </p>
+      </section>
+      <section>
+        <img
+          src="https://images.genius.com/9b4641dc112c9ad658f61642112bd6a2.500x500x1.jpg"
+          alt="An image with the text Parental Approval School Appropriate displayed."
+          width="200px"
+          height="200px"
+        />
+        <p>
+          This is an image to represent just how school-appropriate this web
+          page is. We made this web page to demonstrate the CSS properties of
+          float, clear, position, display, and visibility.
+        </p>
+      </section>
+      <section>
+        <img
+          src="https://images.genius.com/9b4641dc112c9ad658f61642112bd6a2.500x500x1.jpg"
+          alt="An image with the text Parental Approval School Appropriate displayed."
+          width="200px"
+          height="200px"
+        />
+        <p>
+          This is an image to represent just how school-appropriate this web
+          page is. We made this web page to demonstrate the CSS properties of
+          float, clear, position, display, and visibility.
+        </p>
+      </section>
+      <section>
+        <img
+          src="https://images.genius.com/9b4641dc112c9ad658f61642112bd6a2.500x500x1.jpg"
+          alt="An image with the text Parental Approval School Appropriate displayed."
+          width="200px"
+          height="200px"
+        />
+        <p>
+          This is an image to represent just how school-appropriate this web
+          page is. We made this web page to demonstrate the CSS properties of
+          float, clear, position, display, and visibility.
+        </p>
+      </section>
+      <a href="#top" id="back-to-top">&#9651;</a>
+    </main>
+  </body>
+</html>

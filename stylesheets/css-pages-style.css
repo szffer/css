@@ -1,12 +1,39 @@
 body {
-  background-color: #fbfbfe;
-  color: #17230b;
+  background-color: ghostwhite;
+  color: #291541;
+  font-size: 20px;
 }
 h1 {
   text-align: center;
-  font-size: 40px;
+  font-size: 48px;
 }
-p {
-  color: blue;
-  font-size: 24px;
+section p {
+  font-weight: bold;
+}
+
+section div {
+  position: relative;
+  top: 50%;
+
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.margin {
+  margin: 5% 10%;
+}
+.nav-link {
+  display: inline-block;
+
+  margin: 4px;
+
+  border: 2px, solid black;
+
+  padding: 5px;
+
+  background-color: #003100;
+  color: #eeffee;
 }

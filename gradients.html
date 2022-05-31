@@ -4,24 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Div and Span</title>
-
+    <title>Gradients</title>
     <style>
       body {
-        background-color: #a3a3b4;
-        color: #17230b;
-      }
-      h1 {
-        text-align: center;
-        font-size: 40px;
+       background-image: linear-gradient(to right,rgb(220, 237, 253), rgb(174, 227, 247), rgb(115, 178, 234));
       }
       p {
-        color: blue;
-        font-size: 24px;
-      }
-      #styled-by-id {
-        font-family: Georgia, Cambria, serif;
-        font-weight: bold;
+        text-shadow: 0px 2px 2px #898989;
       }
       ul {
         list-style: none;
@@ -31,24 +20,11 @@
         margin: 4px;
         font-size: 20px;
       }
-      .nav-link {
-        margin: 4px;
-
-        border: 2px, solid black;
-
-        padding: 5px;
-
-        background-color: #003100;
-        color: #eeffee;
-      }
-
     </style>
   </head>
-
   <body>
-    <header>
-      <nav>
-        <ul>
+    <nav>
+     <ul>
           <a class="nav-link" href="index.html"> <li>Inline CSS</li> </a>
           <a class="nav-link" href="internal-css.html">
             <li>Internal CSS</li>
@@ -71,21 +47,17 @@
            <li>Gradients</li>
           <a class="nav-link" href="transforms-transitions-animations.html">
            <li>Transformations, Transitions, Animations</li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <h1>Divs and Spans</h1>
-      <div style="background-color: ghostwhite; height: 140px; width: auto">
-        <p>This page shows the effects of adding internal CSS to HTML tags</p>
-        <p id="styled-by-id">
-          This paragraph will show the effect of giving an element and ID and
-          <span style="background-color: rgb(0, 255, 30); font-style: italic">
-            styling
-          </span>
-          that ID
-        </p>
-      </div>
-    </main>
+      </ul>
+      <h1>Backgrounds and Text</h1>
+      <section>
+        <div class="fontW">
+          <p>cookie</p>
+          <p>trees</p>
+          <p>moon</p>
+          <p>afghan</p>
+          <p>rock</p>
+        </div>
+      </section>
+    </nav>
   </body>
 </html>

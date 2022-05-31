@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transforms, Transitions, Animations</title>
+    <link rel="stylesheet" href="stylesheets/css-pages-style.css" />
+    <style>
+      body {
+        background-image:url("images/background.jpg");
+        background-repeat: repeat-y; 
+        background-position: center; 
+
+        /*Define the size of our background image. In this case, it is 100% of the
+         width and the auto size for 100% of the width*/
+        background-size: 100% auto; 
+
+          margin: 0; 
+
+          /*Allows us to define a name for out animation so that
+          multiple animatioms can be created for a single web page
+          and the animation can be used for a single web page and the 
+          animation can be used for several different elements if we want.*/
+          animation-name:fade-in; 
+
+          /*This defines how long the animation will take*/
+          animation-duration: 1s; 
+
+          /*This defines how the animation will look within that 1s timeframe*/
+          animation-timing-function: ease-in;
+
+          /*This causes a 0.5 second delay before the animation starts.*/
+          animation-delay: 0.5s;
+
+         /* animation-iteration-count: 2; */
+
+        /* animation-direction: reverse; */
+
+         animation-fill-mode: forwards;
+
+         /* This is the shorthand for animation that includes all of the
+         above animation properties.*/
+         -o-animation: fade-in 0.7s ease-in-out 0.5s; 
+         -webkit-animation: fade-in 0.7s ease-in-out 0.5s;
+         -moz-animation: fade-in 0.7s ease-in-out 0.5s;
+         -ms-animation: fade-in 0.7s ease-in-out 0.5s;
+         animation: fade-in 0.7s ease-in-out 0.5s; 
+      }
+@keyframes fade-in {
+  from {
+    transform:translateY(300px); 
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes square {
+0% {
+  position: relative; 
+  top: 0;
+  left: 0;
+}
+25% {
+  left: 200px
+}
+50% {
+  top: 200px 
+}
+75% {
+  left: 0; 
+}
+100% {
+  top: 0; 
+}
+  }
+
+      p {
+        text-shadow: 0px 2px 2px #898989;
+      }
+      h1 {
+          position: relative; 
+          left: 50%; 
+          transform: translateX(-50%);
+
+         display: inline-block; 
+        
+         padding: 10px 30px; 
+
+         font-size: 48px;
+         font-family: Arial, Helvetica, sans-serif; 
+         text-align: center;
+         color:rgb(203, 203, 203);
+         text-shadow: 0px 2px 2px black;
+
+         visibility: hidden; 
+
+         -o-animation: swivel 1s ease-in-out 0.3s forwards;
+         -moz-animation: swivel 1s ease-in-out 0.3s forwards;
+         -webkit-animation: swivel 1s ease-in-out 0.3s forwards;
+         animation: swivel 1s ease-in-out 0.3s forwards;
+
+        /* transform: skew(30deg);
+         -moz-transform: skew(30deg);
+         -o-transform: skew(30deg);
+         -webkit-transform: skew(30deg);
+         -ms-transform: skew(30deg); */
+      }
+
+@keyframes swivel{
+  from {
+    transform: translateX(-50%) rotateY(90deg); 
+  }
+  to {
+    transform: translateX(-50%) rotateY(0deg); 
+    visibility: visible;
+  }
+}
+
+      ul {
+        list-style: none;
+      }
+      li {
+        padding: 5px;
+        margin: 4px;
+        font-size: 20px;
+      }
+      
+      nav a {   
+        font-weight: bolder; 
+
+      transition: transform 0.5s ease-in-out;
+      }
+
+      nav a:hover, nav a:focus {
+
+          transform:scale(1.1); 
+          -ms-transform:scale(1.1); 
+          -o-transform:scale(1.1); 
+          -webkit-transform:scale(1.1); 
+          -moz-transform:scale(1.1); 
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+     <ul>
+          <a class="nav-link" href="index.html"> <li>Inline CSS</li> </a>
+          <a class="nav-link" href="internal-css.html">
+            <li>Internal CSS</li>
+          </a>
+          <a class="nav-link" href="external-css.html">
+            <li>External CSS</li>
+          </a>
+          <a class="nav-link" href="testing-cascading.html">
+            <li>Testing Cascading</li>
+          </a>
+          <a class="nav-link" href="classes-and-ids.html">
+            <li>Classes and IDs</li>
+          </a>
+          <a class="nav-link" href="typography.html">
+          <li>Typography Principles</li>
+          <a class="nav-link" href="backgrounds-and-text.html"> 
+            <li>Backgrounds and Text</li>
+          </a>
+          <a class="nav-link" href="gradients.html">
+           <li>Gradients</li>
+          <a class="nav-link" href="transforms-transitions-animations.html">
+           <li>Transformations, Transitions, Animations</li>
+      </ul>
+    </nav>
+      <h1>Transitions, Transormations, Animations</h1>
+      <section>
+        <div>
+          <p>cookie</p>
+          <p>trees</p>
+          <p>moon</p>
+          <p>afghan</p>
+          <p>rock</p>
+        </div>
+      </section>
+  </body>
+</html>
